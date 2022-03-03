@@ -1,7 +1,3 @@
-//INTEGRANTES :
-//CAROLINE JENUARIO RODRIGUES DA SILVA
-//ALEXANDRE DOS SANTOS BINDO CABRAL
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -43,7 +39,7 @@ int main () {
 
 
     do{
-      printf ("  %c Selecione uma das opÁoes: \n", 006);
+      printf ("  %c Selecione uma das op√ßoes: \n", 006);
       printf ("[1] - Cadastrar Gladiador \n");
       printf( "[2] - Atualizar Gladiador \n");
       printf ("[3] - Listar Gladiadores \n");
@@ -59,13 +55,13 @@ int main () {
            break;
         case 1:
             c = LerGladiador(lista, pos);
-            // AlocaÁ„o dinamica: Calcular o numero de bytes necess·rios, multiplicando 1 pelo tamanho da variavel struckt
+            // Aloca√ß√£o dinamica: Calcular o numero de bytes necess√°rios, multiplicando 1 pelo tamanho da variavel struckt
             // e utilizar malloc para reservar a quantidade na memoria, converter para o tipo de dado struckt(gladiador*)
             if (pos==0) { //se o contador for igual a zero, realizar a alocacao
                 lista = (gladiador*) malloc (1*sizeof(gladiador));
                 pos+=1;
                 }
-            // realloc: mudar o tamanho do espaÁo alocado na memoria, com tamanho (pos) atualizado
+            // realloc: mudar o tamanho do espa√ßo alocado na memoria, com tamanho (pos) atualizado
             else {
                 pos+=1;
                 lista = (gladiador*) realloc (lista, pos* sizeof(gladiador));
@@ -95,7 +91,7 @@ int main () {
 
             fread (&pos, sizeof(int),1,fp); // retorna o numero de unidades lidas
             fread (&lista, sizeof(gladiador), pos, fp);
-            fwrite(&pos,sizeof(int),1,fp);  //retorna o n˙mero de itens escritos.
+            fwrite(&pos,sizeof(int),1,fp);  //retorna o n√∫mero de itens escritos.
             fwrite(&lista, sizeof(gladiador),pos, fp);
             fclose(fp); //fechar /
 
@@ -198,10 +194,10 @@ void BatalhaGladiador(gladiador *a, gladiador *b, int tam) {
     float pa, pb;
     /*/ aqui e utilizado somente as posicoes 1 e 2, ja que o jogo eh limitado a 2 jogadres por vez,
     portanto a comparacao ocorre com os dois primeiros valores atribuidos a struckt /*/
-    pa = poder(a,1); //ponteiro a, posicao 1 È atribuida a funcao poder
+    pa = poder(a,1); //ponteiro a, posicao 1 √© atribuida a funcao poder
     pb = poder (b,2);
 
-    // foi utilizado dois comandos for encadeados, j· que cada um vai percorrer um ponteiro diferente, i para *a e j para *b
+    // foi utilizado dois comandos for encadeados, j√° que cada um vai percorrer um ponteiro diferente, i para *a e j para *b
     // o comando i e j <1  sao para que a comparacao ocorra somente uma vez
     for (i=0;i<1;i++) {
         for (j=i+1;j<1;j++) //j e atribuido ao valor de i+1, neste caso eh 2 posicao (1)
@@ -230,14 +226,14 @@ int i, num;
 
   printf("Gerando 1 valor aleatorio:\n\n");
 
-  //srand(time(NULL)) objetiva inicializar o gerador de n˙meros aleatÛrios
- //om o valor da funÁ„o time(NULL).
+  //srand(time(NULL)) objetiva inicializar o gerador de n√∫meros aleat√≥rios
+ //om o valor da fun√ß√£o time(NULL).
 
   srand(time(NULL));
 
   for (i=0; i <1;i++){
     num = rand() % 100;
-    // gerando valores aleatÛrios na faixa de 0 a 100
+    // gerando valores aleat√≥rios na faixa de 0 a 100
     printf("%d \n", num);
 
   }
